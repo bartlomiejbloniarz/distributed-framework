@@ -1,8 +1,8 @@
 language: go
-dist: focal
+dist: bullseye
 
 go:
-- 1.13.x
+- 1.16.x
 
 branches:
   only:
@@ -10,9 +10,6 @@ branches:
 
 before_script:
   - go version
-  - go get -u golang.org/x/lint/golint
-  - GOLINT=`go list -f {{.Target}} golang.org/x/lint/golint`
-  - PATH=$PATH:$GOLINT
   - GOPATH=$GOPATH:`pwd`
 
 script:
